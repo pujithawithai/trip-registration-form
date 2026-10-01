@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Trip Registration</title>
+  </head>
+
+  <body>
+    <h1>Trip Registration Form</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <label>Name:</label>
+      <input type="text" name="name" required />
+      <br /><br />
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required />
+      <br /><br />
+
+      <label>Email:</label>
+      <input type="email" name="email" required />
+      <br /><br />
+
+      <label>Number of People:</label>
+      <input type="number" name="number_of_people" min="1" required />
+      <br /><br />
+
+      <label>Food Preference:</label>
+
+      <select name="food_preference">
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Non-Vegetarian">Non-Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+      </select>
+
+      <br /><br />
+
+      <label>Message:</label>
+      <br />
+
+      <textarea name="message" rows="5" cols="40"></textarea>
+
+      <br /><br />
+
+      <button type="submit">Register for Trip</button>
+    </form>
+  </body>
+</html>
